@@ -1,4 +1,35 @@
-<!DOCTYPE html><html lang="en"><head><link rel="preload" as="script" href="https://www.googletagservices.com/tag/js/gpt.js" /><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://cdn.now.gg" /><link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="crossOrigin" /><link rel="icon" href="https://cdn.now.gg/apps-content/common/img/favicon-32.ico" sizes="32x32" /><link rel="icon" href="https://cdn.now.gg/apps-content/common/img/favicon-48.ico" sizes="48X48" /><link rel="icon" href="https://cdn.now.gg/apps-content/common/img/favicon-96.ico" sizes="96X96" /><link rel="icon" href="https://cdn.now.gg/apps-content/common/img/favicon-192.ico" sizes="192x192" /><meta name="msapplication-TileImage" content="https://cdn.now.gg/apps-content/common/img/favicon.ico" /><link href="https://cdn.now.gg/apps-content/common/img/favicon.ico" /><script>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+  // Enable CORS for all routes
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  // Handle different HTTP methods
+  if (req.method === 'OPTIONS') {
+    // Handle preflight requests
+    res.writeHead(204);
+    res.end();
+  } else {
+    // Handle other requests
+    // Your regular request handling logic goes here
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Hello, World!');
+  }
+});
+
+const PORT = 3000;
+
+server.listen(PORT, () => {
+  console.log(`Server is listening on port ${PORT}`);
+});
+</script>
+    <link rel="preload" as="script" href="https://www.googletagservices.com/tag/js/gpt.js" /><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://cdn.now.gg" /><link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="crossOrigin" /><link rel="icon" href="https://cdn.now.gg/apps-content/common/img/favicon-32.ico" sizes="32x32" /><link rel="icon" href="https://cdn.now.gg/apps-content/common/img/favicon-48.ico" sizes="48X48" /><link rel="icon" href="https://cdn.now.gg/apps-content/common/img/favicon-96.ico" sizes="96X96" /><link rel="icon" href="https://cdn.now.gg/apps-content/common/img/favicon-192.ico" sizes="192x192" /><meta name="msapplication-TileImage" content="https://cdn.now.gg/apps-content/common/img/favicon.ico" /><link href="https://cdn.now.gg/apps-content/common/img/favicon.ico" /><script>
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     "gtm.start": new Date().getTime(),
